@@ -60,7 +60,7 @@ Then, in our layout:
 		</head>
 ```
 
-This works pretty well, I've also ensures that the CSS and
+This works pretty well, I've also ensured that the CSS and
 JS code are eval()'d in php so we can use variables and
 other php goodies within these blocks - allowing for fairly
 complex and dynamic code to be generated for the front-end.
@@ -145,13 +145,13 @@ good.
 Will keep this updated as I go, but anyone is free to tinker with
 this code as they wish I really don't mind. 
 
-will do my best to knock some documentation together, I intend
-to continue developing this framework - once bitraq is complete
-I intend to add API functionality, for now it's serving full
-HTML pages but I want to be able to use it for fetching JSON
+I'll do my best to knock some documentation together when I get
+time, I intend to continue developing this framework - once bitraq
+is complete I intend to add API functionality, for now it's serving
+full HTML pages but I want to be able to use it for fetching JSON
 objects. I wrote __Bricktop__ a while ago which was my effort
-in dabbling with building a front-end framework, lot of fun
-and learnt a lot, but learnt more since so there's room for
+in dabbling with building a front-end, JavaScript framework, lot
+of fun and learnt a lot, but learnt more since so there's room for
 improvement - maybe one day I'll be developing projects using
 my own stack! How cool would that be?
 
