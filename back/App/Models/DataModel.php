@@ -873,6 +873,50 @@ public function getSQLDataSet($tableData, &$exprParameters)
 
 /**
  * 
+ * Method used to search tables.
+ * 
+ *  I hacked this together for the search function
+ *  on bitraq.
+ * 
+ *  Not much to say - returns any rows that match
+ *  the given criteria.
+ * 
+ * @param columnName
+ *  Column to search for matches.
+ * 
+ * @param searchQuery
+ *  Query string to search for.
+ * 
+ * @return
+ *  Array of rows (if any) where a match was found.
+ * 
+ */
+public function getRowsLike($columnName, $searchQuery)
+    {
+        $_sqlString = "SELECT * FROM {$this->tableName} WHERE $columnName LIKE ?";
+        
+        try
+        {
+            $_stmt = $this->dbHandler->prepare($_sqlString);
+            $_stmt->execute(
+                Array(
+                    "%" . $searchQuery . "%"
+                )
+            );
+
+            return $_stmt->fetchAll();
+        }
+        catch (PDOException $ex)
+        {
+            $this->__setError("Error in getRowsLike(): " . $ex->getMessage());
+        }
+
+        return false;
+    }
+
+
+/**
+ * 
  *  This method will return any rows who meet the
  *  criteria specified by the matchTableData array.
  * 
